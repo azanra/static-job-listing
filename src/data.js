@@ -147,8 +147,8 @@ export const data = [
   },
   {
     id: 10,
-    company: airfilter,
-    logo: "./images/the-air-filter-company.svg",
+    company: "The Air Filter Company",
+    logo: airfilter,
     new: false,
     featured: false,
     position: "Front-end Dev",
