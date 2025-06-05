@@ -1,6 +1,6 @@
 export default function SearchBar({ selectedFilter }) {
   const filterValue = Object.values(selectedFilter);
-  console.log(filterValue);
+
   const list = filterValue.map((filter, index) => {
     if (Array.isArray(filter)) {
       const listArr = filter.map((item, i) => {
