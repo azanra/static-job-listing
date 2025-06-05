@@ -5,7 +5,9 @@ import SearchBar from "./component/searchBar.jsx";
 function App() {
   const selectedFilter = {
     role: "Frontend",
+    level: null,
     language: ["CSS", "Javascript"],
+    tools: [],
   };
   return (
     <>

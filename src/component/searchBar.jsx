@@ -1,22 +1,20 @@
 export default function SearchBar({ selectedFilter }) {
-  let filter = [];
-  for (const key in selectedFilter) {
-    if (Array.isArray(selectedFilter[key])) {
-      selectedFilter[key].map((item) => {
-        filter.push(item);
+  const filterValue = Object.values(selectedFilter);
+  console.log(filterValue);
+  const list = filterValue.map((filter, index) => {
+    if (Array.isArray(filter)) {
+      const listArr = filter.map((item, i) => {
+        return <li key={`item-${i}`}>{item}</li>;
       });
-    } else {
-      filter.push(selectedFilter[key]);
+      return listArr;
+    } else if (filter) {
+      return <li key={index}>{filter}</li>;
     }
-  }
+  });
   return (
     <>
       <div>
-        <ul>
-          {filter.map((item, index) => {
-            return <li key={index}>{item}</li>;
-          })}
-        </ul>
+        <ul>{list}</ul>
       </div>
     </>
   );
