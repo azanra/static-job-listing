@@ -161,3 +161,10 @@ export const data = [
     tools: ["React", "Sass"],
   },
 ];
+
+export const initialFilter = {
+  role: null,
+  level: null,
+  languages: [],
+  tools: [],
+};
