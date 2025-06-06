@@ -1,3 +1,8 @@
+import { createContext } from "react";
+
+export const SelectedFilterContext = createContext(null);
+export const DispatchContext = createContext(null);
+
 export function selectedFilterReducer(selectedFilter, action) {
   switch (action.type) {
     case "set":

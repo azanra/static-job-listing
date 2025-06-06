@@ -4,6 +4,7 @@ import Header from "./component/header.jsx";
 import Job from "./component/job.jsx";
 import SearchBar from "./component/searchBar.jsx";
 import { data, initialFilter } from "./data.js";
+import { DispatchContext, SelectedFilterContext } from "./selectedFilter.jsx";
 
 function App() {
   const selectedFilter = {
@@ -19,13 +20,17 @@ function App() {
   const jobs = data;
   return (
     <>
-      <Header>
-        <SearchBar selectedFilter={selectedFilter} />
-        {jobs &&
-          jobs.map((item) => {
-            return <Job key={item.id} info={item} />;
-          })}
-      </Header>
+      <SelectedFilterContext.Provider value={selectedFilter}>
+        <DispatchContext.Provider value={dispatch}>
+          <Header>
+            <SearchBar selectedFilter={selectedFilter} />
+            {jobs &&
+              jobs.map((item) => {
+                return <Job key={item.id} info={item} />;
+              })}
+          </Header>
+        </DispatchContext.Provider>
+      </SelectedFilterContext.Provider>
     </>
   );
 }
