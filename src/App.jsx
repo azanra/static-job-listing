@@ -4,15 +4,13 @@ import Header from "./component/header.jsx";
 import Job from "./component/job.jsx";
 import SearchBar from "./component/searchBar.jsx";
 import { data, initialFilter } from "./data.js";
-import { DispatchContext, SelectedFilterContext } from "./selectedFilter.jsx";
+import {
+  DispatchContext,
+  SelectedFilterContext,
+  selectedFilterReducer,
+} from "./selectedFilter.jsx";
 
 function App() {
-  const selectedFilter = {
-    role: "Frontend",
-    level: null,
-    language: ["CSS", "Javascript"],
-    tools: [],
-  };
   const [selectedFilter, dispatch] = useReducer(
     selectedFilterReducer,
     initialFilter
