@@ -19,5 +19,23 @@ export function selectedFilterReducer(selectedFilter, action) {
           [action.filterType]: action.filterValue,
         };
       }
+    case "remove":
+      if (action.filterType === "languages" || action.filterType === "tools") {
+        const updatedFilter = JSON.parse(JSON.stringify(selectedFilter));
+        const removedFilter = updatedFilter[action.filterType].filter(
+          (item) => {
+            return item !== action.filterValue;
+          }
+        );
+        return {
+          ...selectedFilter,
+          [action.filterType]: removedFilter,
+        };
+      } else {
+        return {
+          ...selectedFilter,
+          [action.filterType]: null,
+        };
+      }
   }
 }

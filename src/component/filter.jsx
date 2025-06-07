@@ -12,7 +12,7 @@ export default function Filter({ info }) {
           languages.map((item, index) => {
             return (
               <FilterButton
-                key={`language-${index}`}
+                key={`languageFilter-${index}`}
                 value={item}
                 type="languages"
               />
@@ -21,7 +21,11 @@ export default function Filter({ info }) {
         {tools.length > 0 &&
           tools.map((item, index) => {
             return (
-              <FilterButton key={`tools-${index}`} value={item} type="tools" />
+              <FilterButton
+                key={`toolsFilter-${index}`}
+                value={item}
+                type="tools"
+              />
             );
           })}
       </div>
@@ -30,7 +34,6 @@ export default function Filter({ info }) {
 }
 
 function FilterButton({ type, value }) {
-  const selectedFilter = useContext(SelectedFilterContext);
   const dispatch = useContext(DispatchContext);
   return (
     <>

@@ -21,7 +21,7 @@ function App() {
       <SelectedFilterContext.Provider value={selectedFilter}>
         <DispatchContext.Provider value={dispatch}>
           <Header>
-            <SearchBar selectedFilter={selectedFilter} />
+            <SearchBar />
             {jobs &&
               jobs.map((item) => {
                 return <Job key={item.id} info={item} />;
