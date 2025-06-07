@@ -3,23 +3,32 @@ import { DispatchContext, SelectedFilterContext } from "../selectedFilter";
 
 export default function SearchBar() {
   const selectedFilter = useContext(SelectedFilterContext);
-  const filterValue = Object.values(selectedFilter);
-
-  const list = filterValue.map((filter, index) => {
-    if (Array.isArray(filter)) {
-      const listArr = filter.map((item, i) => {
-        return <SelectedFilter key={`item-${i}`} value={item} />;
-      });
-      return listArr;
-    } else if (filter) {
-      return <SelectedFilter key={index} value={filter} />;
-    }
-  });
-
+  const { role, level, languages, tools } = selectedFilter;
   return (
     <>
       <div>
-        <ul>{list}</ul>
+        {role && <SelectedFilter type="role" value={role} />}
+        {level && <SelectedFilter type="level" value={level} />}
+        {languages.length > 0 &&
+          languages.map((item, index) => {
+            return (
+              <SelectedFilter
+                key={`languagesSeach-${index}`}
+                type="languages"
+                value={item}
+              />
+            );
+          })}
+        {tools.length > 0 &&
+          languages.map((item, index) => {
+            return (
+              <SelectedFilter
+                key={`toolsSearch-${index}`}
+                type="tools"
+                value={item}
+              />
+            );
+          })}
         <button>Clear</button>
       </div>
     </>
