@@ -1,4 +1,5 @@
 import { createContext } from "react";
+import { initialFilter } from "./data";
 
 export const SelectedFilterContext = createContext(null);
 export const DispatchContext = createContext(null);
@@ -37,5 +38,7 @@ export function selectedFilterReducer(selectedFilter, action) {
           [action.filterType]: null,
         };
       }
+    case "reset":
+      return initialFilter;
   }
 }

@@ -3,6 +3,7 @@ import { DispatchContext, SelectedFilterContext } from "../selectedFilter";
 
 export default function SearchBar() {
   const selectedFilter = useContext(SelectedFilterContext);
+  const dispatch = useContext(DispatchContext);
   const { role, level, languages, tools } = selectedFilter;
   return (
     <>
@@ -29,7 +30,15 @@ export default function SearchBar() {
               />
             );
           })}
-        <button>Clear</button>
+        <button
+          onClick={() => {
+            dispatch({
+              type: "reset",
+            });
+          }}
+        >
+          Clear
+        </button>
       </div>
     </>
   );
