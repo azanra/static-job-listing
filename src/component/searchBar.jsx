@@ -20,7 +20,7 @@ export default function SearchBar() {
             );
           })}
         {tools.length > 0 &&
-          languages.map((item, index) => {
+          tools.map((item, index) => {
             return (
               <SelectedFilter
                 key={`toolsSearch-${index}`}
