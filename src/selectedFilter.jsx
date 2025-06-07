@@ -40,5 +40,7 @@ export function selectedFilterReducer(selectedFilter, action) {
       }
     case "reset":
       return initialFilter;
+    default:
+      throw new Error("Unknown Action Type ", action.type);
   }
 }
