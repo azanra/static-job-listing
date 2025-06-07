@@ -1,34 +1,23 @@
-import { useReducer } from "react";
 import "./App.css";
 import Header from "./component/header.jsx";
 import Job from "./component/job.jsx";
 import SearchBar from "./component/searchBar.jsx";
-import { data, initialFilter } from "./data.js";
-import {
-  DispatchContext,
-  SelectedFilterContext,
-  selectedFilterReducer,
-} from "./selectedFilter.jsx";
+import { data } from "./data.js";
+import { SelectedFilterProvider } from "./selectedFilter.jsx";
 
 function App() {
-  const [selectedFilter, dispatch] = useReducer(
-    selectedFilterReducer,
-    initialFilter
-  );
   const jobs = data;
   return (
     <>
-      <SelectedFilterContext.Provider value={selectedFilter}>
-        <DispatchContext.Provider value={dispatch}>
-          <Header>
-            <SearchBar />
-            {jobs &&
-              jobs.map((item) => {
-                return <Job key={item.id} info={item} />;
-              })}
-          </Header>
-        </DispatchContext.Provider>
-      </SelectedFilterContext.Provider>
+      <SelectedFilterProvider>
+        <Header>
+          <SearchBar />
+          {jobs &&
+            jobs.map((item) => {
+              return <Job key={item.id} info={item} />;
+            })}
+        </Header>
+      </SelectedFilterProvider>
     </>
   );
 }

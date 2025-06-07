@@ -1,8 +1,22 @@
-import { createContext } from "react";
-import { initialFilter } from "./data";
+import { createContext, useReducer } from "react";
+import { initialFilter } from "./data.js";
 
 export const SelectedFilterContext = createContext(null);
 export const DispatchContext = createContext(null);
+
+export function SelectedFilterProvider({ children }) {
+  const [selectedFilter, dispatch] = useReducer(
+    selectedFilterReducer,
+    initialFilter
+  );
+  return (
+    <SelectedFilterContext.Provider value={selectedFilter}>
+      <DispatchContext.Provider value={dispatch}>
+        {children}
+      </DispatchContext.Provider>
+    </SelectedFilterContext.Provider>
+  );
+}
 
 export function selectedFilterReducer(selectedFilter, action) {
   switch (action.type) {
