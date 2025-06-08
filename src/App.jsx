@@ -6,14 +6,14 @@ import { SelectedFilterProvider } from "./selectedFilter.jsx";
 
 function App() {
   return (
-    <>
+    <div>
       <SelectedFilterProvider>
         <Header>
           <SearchBar />
-          <JobList />
         </Header>
+        <JobList />
       </SelectedFilterProvider>
-    </>
+    </div>
   );
 }
 
