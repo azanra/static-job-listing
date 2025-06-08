@@ -1,7 +1,7 @@
 export default function Header({ children }) {
   return (
     <>
-      <div>{children}</div>
+      <div className="headerContainer">{children}</div>
     </>
   );
 }

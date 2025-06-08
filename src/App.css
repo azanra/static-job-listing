@@ -13,3 +13,9 @@
 body {
   font-family: "League Spartan", var(--system-ui);
 }
+
+.headerContainer {
+  background: no-repeat url("./assets/images/bg-header-desktop.svg");
+  background-color: var(---Desaturated-Dark-Cyan);
+  height: 150px;
+}
