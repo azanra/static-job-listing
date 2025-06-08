@@ -33,12 +33,22 @@ export default function JobList() {
   const checkToolsAndLanguage = (job, filter) => {
     if (
       selectedFilter[filter].length > 0 &&
-      job[filter].includes(selectedFilter[filter])
+      checkArrayToolsLanguage(job[filter], selectedFilter[filter])
     ) {
       return true;
     } else if (selectedFilter[filter].length === 0) {
       return true;
     }
+  };
+
+  const checkArrayToolsLanguage = (currentJob, filter) => {
+    let isIncluded = false;
+    filter.map((item) => {
+      if (currentJob.includes(item)) {
+        isIncluded = true;
+      }
+    });
+    return isIncluded;
   };
 
   const filteredJob = filterJobs(data);
