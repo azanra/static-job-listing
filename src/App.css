@@ -19,3 +19,9 @@ body {
   background-color: var(---Desaturated-Dark-Cyan);
   height: 150px;
 }
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

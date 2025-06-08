@@ -7,7 +7,7 @@ export default function SearchBar() {
   const { role, level, languages, tools } = selectedFilter;
   return (
     <>
-      <div>
+      <div className="flex w-[70%] gap-4">
         {role && <SelectedFilter type="role" value={role} />}
         {level && <SelectedFilter type="level" value={level} />}
         {languages.length > 0 &&
@@ -30,16 +30,16 @@ export default function SearchBar() {
               />
             );
           })}
-        <button
-          onClick={() => {
-            dispatch({
-              type: "reset",
-            });
-          }}
-        >
-          Clear
-        </button>
       </div>
+      <button
+        onClick={() => {
+          dispatch({
+            type: "reset",
+          });
+        }}
+      >
+        Clear
+      </button>
     </>
   );
 }
@@ -48,7 +48,7 @@ function SelectedFilter({ type, value }) {
   const dispatch = useContext(DispatchContext);
   return (
     <div>
-      <span>{value}</span>
+      <span>{value} </span>
       <button
         onClick={() => {
           dispatch({
