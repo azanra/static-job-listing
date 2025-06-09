@@ -5,7 +5,7 @@
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   ---Desaturated-Dark-Cyan: hsl(180, 29%, 50%);
   --Light-Gray-Cyan: hsl(180, 52%, 96%);
-  --Light-Grayish-Cyan: hsl(180, 31%, 95%);
+  --Light-Grayish-Cyan: hsl(180, 57%, 91%);
   --Dark-Grayish-Cyan: hsl(180, 8%, 52%);
   --Very-Dark-Grayish-Cyan: hsl(180, 14%, 20%);
 }
@@ -15,7 +15,7 @@ body {
 }
 
 .headerContainer {
-  background: no-repeat url("./assets/images/bg-header-desktop.svg");
+  background: center url("./assets/images/bg-header-desktop.svg");
   background-color: var(---Desaturated-Dark-Cyan);
   height: 150px;
 }

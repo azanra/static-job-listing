@@ -6,8 +6,8 @@ export default function SearchBar() {
   const dispatch = useContext(DispatchContext);
   const { role, level, languages, tools } = selectedFilter;
   return (
-    <div className="bg-(--Light-Gray-Cyan) w-[80%] flex justify-between p-4 rounded-md">
-      <div className="flex gap-4">
+    <div className="bg-(--Light-Gray-Cyan) w-[80%] flex justify-between p-4 rounded-md px-12">
+      <div className="flex gap-6">
         {role && <SelectedFilter type="role" value={role} />}
         {level && <SelectedFilter type="level" value={level} />}
         {languages.length > 0 &&
@@ -37,6 +37,7 @@ export default function SearchBar() {
             type: "reset",
           });
         }}
+        className="text-(--Dark-Grayish-Cyan) font-bold hover:text-(---Desaturated-Dark-Cyan) cursor-pointer hover:underline"
       >
         Clear
       </button>
@@ -47,8 +48,10 @@ export default function SearchBar() {
 function SelectedFilter({ type, value }) {
   const dispatch = useContext(DispatchContext);
   return (
-    <div>
-      <span>{value} </span>
+    <div className="bg-(--Light-Grayish-Cyan) rounded-md">
+      <span className="text-(---Desaturated-Dark-Cyan) font-bold mr-2 ml-2">
+        {value}{" "}
+      </span>
       <button
         onClick={() => {
           dispatch({
@@ -57,8 +60,9 @@ function SelectedFilter({ type, value }) {
             filterValue: value,
           });
         }}
+        className="bg-(---Desaturated-Dark-Cyan) text-white text-2xl px-2 rounded-xs cursor-pointer hover:bg-black font-bold"
       >
-        X
+        x
       </button>
     </div>
   );
