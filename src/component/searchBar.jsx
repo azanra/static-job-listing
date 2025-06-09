@@ -6,8 +6,8 @@ export default function SearchBar() {
   const dispatch = useContext(DispatchContext);
   const { role, level, languages, tools } = selectedFilter;
   return (
-    <>
-      <div className="flex w-[70%] gap-4">
+    <div className="bg-(--Light-Gray-Cyan) w-[80%] flex justify-between p-4 rounded-md">
+      <div className="flex gap-4">
         {role && <SelectedFilter type="role" value={role} />}
         {level && <SelectedFilter type="level" value={level} />}
         {languages.length > 0 &&
@@ -40,7 +40,7 @@ export default function SearchBar() {
       >
         Clear
       </button>
-    </>
+    </div>
   );
 }
 
