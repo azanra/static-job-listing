@@ -4,6 +4,7 @@
   --system-ui: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   ---Desaturated-Dark-Cyan: hsl(180, 29%, 50%);
+  ---boxShadow: hsl(180, 30%, 68%);
   --Light-Gray-Cyan: hsl(180, 52%, 96%);
   --Light-Grayish-Cyan: hsl(180, 57%, 91%);
   --Dark-Grayish-Cyan: hsl(180, 8%, 52%);
@@ -27,5 +28,5 @@ body {
 }
 
 .shadowBox {
-  box-shadow: 0px 5px 30px 0px var(--Dark-Grayish-Cyan);
+  box-shadow: 0px 10px 30px -10px var(---boxShadow);
 }

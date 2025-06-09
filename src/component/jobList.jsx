@@ -55,7 +55,7 @@ export default function JobList() {
   console.log(filteredJob);
   return (
     <>
-      <div>
+      <div className="mt-32">
         {filteredJob &&
           filteredJob.map((item) => {
             return <Job key={item.id} info={item} />;
