@@ -26,7 +26,7 @@ export default function Info({ detailedInfo }) {
       <div>
         <div>
           <ul className="flex gap-8 mb-4 mt-2 list-disc list-inside">
-            <li className="text-(--Dark-Grayish-Cyan) flex">
+            <li className="text-(--Dark-Grayish-Cyan) list-none pb-[2px]">
               {detailedInfo.postedAt}
             </li>
             <li className="text-(--Dark-Grayish-Cyan) infoItemList">
