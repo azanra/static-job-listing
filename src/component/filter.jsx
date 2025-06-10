@@ -5,7 +5,7 @@ export default function Filter({ info }) {
   const { role, level, languages, tools } = info;
   return (
     <>
-      <div>
+      <div className="center ml-[20%] gap-12">
         {role && <FilterButton value={role} type="role" />}
         {level && <FilterButton value={level} type="level" />}
         {languages.length > 0 &&
@@ -45,6 +45,7 @@ function FilterButton({ type, value }) {
             filterValue: value,
           });
         }}
+        className="bg-(--Light-Grayish-Cyan) text-(---Desaturated-Dark-Cyan) font-semibold px-2 py-1 cursor-pointer hover:bg-(---Desaturated-Dark-Cyan) hover:text-white rounded-md"
       >
         {value}
       </button>
