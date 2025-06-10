@@ -55,7 +55,7 @@ export default function JobList() {
   console.log(filteredJob);
   return (
     <>
-      <div className="mt-32">
+      <div className="pt-32 bg-(--Light-Gray-Cyan)">
         {filteredJob &&
           filteredJob.map((item) => {
             return <Job key={item.id} info={item} />;
